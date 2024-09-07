@@ -4,10 +4,13 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from datetime import timedelta
 import os
 import openai
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app = Flask(__name__)
-app.secret_key = os.urandom(24)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://username:password@localhost/aurora_lumina'
+app.secret_key = os.getenv('SECRET_KEY')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URI')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.permanent_session_lifetime = timedelta(days=30)
 
