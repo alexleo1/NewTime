@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<section class="intro">
+    <h2>Welcome to Aurora Lumina</h2>
+    <p>Welcome to the sacred journey of Aurora Lumina, where light, wisdom, and balance guide us towards the ultimate paradise, Luminara. Here, we celebrate the unity of all souls and the beauty of existence.</p>
+    {% if welcome_message %}
+    <p>{{ welcome_message }}</p>
+    {% endif %}
+</section>
+<section class="featured">
+    <h2>Featured Sections</h2>
+    <div class="feature">
+        <h3>Lumina Path</h3>
+        <p>Learn about the journey each soul takes to reach Luminara.</p>
+    </div>
+    <div class="feature">
+        <h3>Aurora Lumina</h3>
+        <p>Discover the supreme deity who embodies the creative, protective, and seeking aspects of divinity.</p>
+    </div>
+    <div class="feature">
+        <h3>Lumina Code</h3>
+        <p>Explore the principles of light, wisdom, and balance that guide our lives.</p>
+    </div>
+</section>
+<section class="cta">
+    <h2>Call to Action</h2>
+    <p><a href="{{ url_for('about') }}">Join Us</a></p>
+    <p><a href="{{ url_for('about') }}">Learn More</a></p>
+</section>
+{% endblock %}
